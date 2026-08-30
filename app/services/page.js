@@ -3,23 +3,23 @@ import { Services } from "@/components/Services";
 
 export const metadata = {
   title: "Healthcare Services & Specialties | Nhyirakesi Wellness Hospital",
-  description: "Explore our medical specialties: Natural & Scientific Medicine, Spine & Joint Pain Rehabilitation, Wellness & Longevity, and 24/7 Consultations in Takoradi.",
+  description: "Explore our medical specialties: Natural & Scientific Medicine, Spine & Joint Pain Rehabilitation, Wellness & Rejuvenation, and 24/7 Consultations in Takoradi.",
 };
 
 export default function ServicesPage() {
   return (
     <div className="bg-white">
       {/* Header Banner */}
-      <section className="bg-gradient-to-r from-medical-dark via-slate-900 to-medical-blue-dark text-white py-16 sm:py-20 px-4 text-center">
-        <div className="max-w-4xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold">
+      <section className="bg-slate-900 text-white py-12 sm:py-16 px-4 border-b border-slate-800 text-left">
+        <div className="max-w-7xl mx-auto space-y-2">
+          <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md bg-slate-800 text-blue-300 text-xs font-semibold border border-slate-700">
             Nhyirakesi Medical Specialties
           </div>
-          <h1 className="font-serif text-4xl sm:text-5xl font-extrabold tracking-tight">
+          <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight">
             Our Healthcare & Wellness Services
           </h1>
-          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
-            Combining modern medical diagnostics with evidence-backed natural therapies for complete restoration and vital health.
+          <p className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
+            Combining modern diagnostic care with evidence-informed natural therapies for complete restoration and patient wellness.
           </p>
         </div>
       </section>
@@ -29,3 +29,4 @@ export default function ServicesPage() {
     </div>
   );
 }
+

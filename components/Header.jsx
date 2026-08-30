@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Clock, MapPin, MessageCircle, Menu, X, Calendar } from "lucide-react";
+import { Phone, MapPin, MessageCircle, Menu, X, Calendar } from "lucide-react";
 import { hospitalInfo } from "@/content/hospitalData";
 import { BookingModal } from "./BookingModal";
 
@@ -23,29 +23,30 @@ export function Header() {
   return (
     <>
       {/* Top Announcement & Emergency Contact Bar */}
-      <div className="bg-medical-dark text-slate-200 text-xs py-2 px-4 transition-colors border-b border-slate-800">
+      <div className="bg-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
           {/* Left Info */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
-            <span className="inline-flex items-center gap-1.5 font-medium text-emerald-400 badge-pulse pl-4">
-              {hospitalInfo.status}
+            <span className="inline-flex items-center gap-1.5 font-medium text-emerald-400">
+              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+              {hospitalInfo.status} in Takoradi
             </span>
-            <span className="hidden sm:inline-block text-slate-600">|</span>
-            <span className="inline-flex items-center gap-1">
+            <span className="hidden sm:inline-block text-slate-700">|</span>
+            <span className="inline-flex items-center gap-1 text-slate-300">
               <MapPin className="w-3.5 h-3.5 text-medical-blue" />
-              Takoradi, Ghana (Adientem Rd)
+              Adientem Road, Takoradi, Ghana
             </span>
           </div>
 
           {/* Right Phone Contacts */}
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3 font-semibold text-white">
-              <Phone className="w-3.5 h-3.5 text-medical-red animate-pulse" />
-              <span>Call:</span>
+            <div className="flex items-center gap-2.5 font-semibold text-white">
+              <Phone className="w-3.5 h-3.5 text-medical-red" />
+              <span className="text-slate-400 text-[11px] uppercase font-bold">Hotline:</span>
               <a href={`tel:${hospitalInfo.phones[0].value}`} className="hover:text-medical-blue transition-colors">
                 {hospitalInfo.phones[0].display}
               </a>
-              <span className="hidden lg:inline text-slate-600">|</span>
+              <span className="hidden lg:inline text-slate-700">|</span>
               <a href={`tel:${hospitalInfo.phones[1].value}`} className="hidden lg:inline hover:text-medical-blue transition-colors">
                 {hospitalInfo.phones[1].display}
               </a>
@@ -56,7 +57,7 @@ export function Header() {
               href={`https://wa.me/${hospitalInfo.whatsappNumber}?text=Hello%20Nhyirakesi%20Wellness%20Hospital,%20I%20would%20like%20to%20inquire%20about%20your%20services.`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1 rounded-full font-medium transition-all transform hover:scale-105"
+              className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1 rounded-md font-medium text-xs transition-colors"
             >
               <MessageCircle className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">WhatsApp</span>
@@ -67,16 +68,14 @@ export function Header() {
 
       {/* Main Sticky Header */}
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-md py-3"
-            : "bg-white py-4 border-b border-slate-100"
+        className={`sticky top-0 z-40 bg-white border-b border-slate-200 transition-all duration-200 ${
+          isScrolled ? "shadow-sm py-3" : "py-3.5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo & Hospital Name */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-14 overflow-hidden rounded-lg border-2 border-medical-blue shadow-sm transition-transform group-hover:scale-105 bg-white">
+            <div className="relative w-11 h-13 overflow-hidden rounded-md border border-slate-300 bg-white">
               <Image
                 src={hospitalInfo.logoPath}
                 alt="Nhyirakesi Hospital Logo"
@@ -86,7 +85,7 @@ export function Header() {
               />
             </div>
             <div>
-              <div className="font-serif font-extrabold text-lg sm:text-xl text-medical-dark leading-tight tracking-tight group-hover:text-medical-blue transition-colors">
+              <div className="font-serif font-bold text-lg sm:text-xl text-slate-900 leading-tight tracking-tight group-hover:text-medical-blue transition-colors">
                 NHYIRAKESI
               </div>
               <div className="text-xs font-semibold uppercase tracking-wider text-medical-blue">
@@ -96,7 +95,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-slate-700 text-sm">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-semibold text-slate-700 text-sm">
             <Link href="/" className="hover:text-medical-blue transition-colors">
               Home
             </Link>
@@ -115,7 +114,7 @@ export function Header() {
           <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={() => setBookingOpen(true)}
-              className="inline-flex items-center gap-2 bg-medical-red hover:bg-medical-red-hover text-white px-4 py-2.5 rounded-xl font-semibold text-sm shadow-sm hover:shadow-md transition-all active:scale-95"
+              className="inline-flex items-center gap-2 bg-medical-red hover:bg-medical-red-hover text-white px-4 py-2 rounded-lg font-bold text-sm shadow-2xs transition-colors"
             >
               <Calendar className="w-4 h-4" />
               Book Appointment
@@ -134,52 +133,52 @@ export function Header() {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-4 shadow-xl">
-            <nav className="flex flex-col space-y-3 font-medium text-slate-800 text-base">
+          <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-4 shadow-lg">
+            <nav className="flex flex-col space-y-2 font-semibold text-slate-800 text-base">
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-medical-blue"
+                className="px-3 py-2 rounded-md hover:bg-slate-50 hover:text-medical-blue"
               >
                 Home
               </Link>
               <Link
                 href="/about"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-medical-blue"
+                className="px-3 py-2 rounded-md hover:bg-slate-50 hover:text-medical-blue"
               >
                 About Us
               </Link>
               <Link
                 href="/services"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-medical-blue"
+                className="px-3 py-2 rounded-md hover:bg-slate-50 hover:text-medical-blue"
               >
                 Services
               </Link>
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-medical-blue"
+                className="px-3 py-2 rounded-md hover:bg-slate-50 hover:text-medical-blue"
               >
                 Location & Contact
               </Link>
             </nav>
 
-            <div className="pt-2 border-t border-slate-100 flex flex-col gap-2">
+            <div className="pt-2 border-t border-slate-200 flex flex-col gap-2">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   setBookingOpen(true);
                 }}
-                className="w-full flex items-center justify-center gap-2 bg-medical-red text-white py-3 rounded-xl font-semibold shadow-sm"
+                className="w-full flex items-center justify-center gap-2 bg-medical-red text-white py-2.5 rounded-lg font-bold shadow-2xs"
               >
                 <Calendar className="w-4 h-4" />
                 Book Appointment
               </button>
               <a
                 href={`tel:${hospitalInfo.phones[0].value}`}
-                className="w-full flex items-center justify-center gap-2 bg-medical-blue text-white py-3 rounded-xl font-semibold"
+                className="w-full flex items-center justify-center gap-2 bg-medical-blue text-white py-2.5 rounded-lg font-bold"
               >
                 <Phone className="w-4 h-4" />
                 Call {hospitalInfo.phones[0].display}
@@ -194,3 +193,4 @@ export function Header() {
     </>
   );
 }
+

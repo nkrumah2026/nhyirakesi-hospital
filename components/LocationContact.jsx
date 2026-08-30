@@ -1,79 +1,100 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import { MapPin, Phone, Mail, Clock, MessageCircle, ExternalLink, HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
-import { hospitalInfo, faqList } from "@/content/hospitalData";
+import { MapPin, Phone, Mail, Clock, MessageCircle, ExternalLink, HelpCircle, ChevronDown, ChevronUp, CheckCircle, Calendar } from "lucide-react";
+import { hospitalInfo, faqList, firstVisitSteps } from "@/content/hospitalData";
+import { BookingModal } from "./BookingModal";
 
 export function LocationContact() {
   const [openFaq, setOpenFaq] = useState(0);
+  const [bookingOpen, setBookingOpen] = useState(false);
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-12 md:py-16 bg-slate-50 border-t border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
-        {/* Section Title */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-wider border border-emerald-100">
-            Visit & Reach Us
-          </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-medical-dark tracking-tight">
-            Location, Contacts & FAQs
+        {/* Section Header - Left Aligned */}
+        <div className="max-w-3xl space-y-2 text-left">
+          <h2 className="text-xs font-bold uppercase tracking-wider text-medical-blue">
+            Hospital Location & Contact
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
-            Located conveniently on Adientem Road in Takoradi. Call us, send a WhatsApp message, or visit our facility 24/7.
+          <h3 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
+            Visiting Nhyirakesi Wellness Hospital
+          </h3>
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+            Located on Adientem Road in Takoradi. Call our phone numbers, message us on WhatsApp, or visit our clinic at any hour.
           </p>
         </div>
 
-        {/* Contact Info Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+        {/* Patient First Visit Guide */}
+        <div className="bg-white rounded-xl p-6 sm:p-8 border border-slate-200 space-y-6 shadow-2xs">
+          <div className="text-left max-w-2xl space-y-1">
+            <h4 className="font-serif text-xl sm:text-2xl font-bold text-slate-900">
+              What to Expect on Your First Visit
+            </h4>
+            <p className="text-slate-600 text-xs sm:text-sm">
+              We ensure every patient receives clear, comfortable, and attentive medical care.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {firstVisitSteps.map((stepItem, idx) => (
+              <div key={idx} className="bg-slate-50 p-4 rounded-lg border border-slate-200 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-medical-blue bg-blue-50 px-2 py-0.5 rounded-md border border-blue-200">
+                    Step {stepItem.step}
+                  </span>
+                </div>
+                <h5 className="font-bold text-slate-900 text-base">{stepItem.title}</h5>
+                <p className="text-slate-600 text-xs leading-relaxed">{stepItem.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact Info & Directions Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Contact Details Card (7 Cols) */}
-          <div className="lg:col-span-7 bg-slate-50 rounded-3xl p-8 border border-slate-200/80 shadow-xs space-y-8">
-            <div className="border-b border-slate-200 pb-4">
-              <h3 className="font-serif text-2xl font-bold text-medical-dark">
-                Hospital Contact Channels
-              </h3>
-              <p className="text-slate-600 text-sm mt-1">
-                Reach our receptionists and clinical team directly.
+          {/* Contact Details (7 Cols) */}
+          <div className="lg:col-span-7 bg-white rounded-xl p-6 sm:p-8 border border-slate-200 shadow-2xs space-y-6">
+            <div className="border-b border-slate-200 pb-3">
+              <h4 className="font-serif text-xl font-bold text-slate-900">
+                Direct Contact Lines
+              </h4>
+              <p className="text-slate-600 text-xs mt-0.5">
+                Our receptionists and clinical team are available 24 hours a day.
               </p>
             </div>
 
-            {/* Address Item */}
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-medical-blue text-white flex items-center justify-center shrink-0 shadow-md">
-                <MapPin className="w-6 h-6" />
+            {/* Address */}
+            <div className="flex items-start gap-3.5">
+              <div className="w-10 h-10 rounded-lg bg-blue-50 text-medical-blue border border-blue-200 flex items-center justify-center shrink-0">
+                <MapPin className="w-5 h-5" />
               </div>
-              <div className="space-y-1">
-                <h4 className="font-bold text-slate-900 text-base">Physical Location & Address</h4>
-                <p className="text-slate-700 text-sm font-semibold">
-                  {hospitalInfo.address.street}
-                </p>
-                <p className="text-slate-600 text-xs sm:text-sm">
-                  {hospitalInfo.address.landmark}
-                </p>
-                <p className="text-medical-blue text-xs font-bold pt-1">
-                  {hospitalInfo.address.city}, {hospitalInfo.address.country}
-                </p>
+              <div className="space-y-0.5 text-xs sm:text-sm">
+                <h5 className="font-bold text-slate-900">Physical Address</h5>
+                <p className="text-slate-700 font-medium">{hospitalInfo.address.street}</p>
+                <p className="text-slate-600">{hospitalInfo.address.landmark}</p>
+                <p className="text-medical-blue font-semibold pt-0.5">{hospitalInfo.address.city}, {hospitalInfo.address.country}</p>
               </div>
             </div>
 
-            {/* Phone Numbers Grid */}
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-medical-red text-white flex items-center justify-center shrink-0 shadow-md">
-                <Phone className="w-6 h-6" />
+            {/* Phone Numbers */}
+            <div className="flex items-start gap-3.5">
+              <div className="w-10 h-10 rounded-lg bg-red-50 text-medical-red border border-red-200 flex items-center justify-center shrink-0">
+                <Phone className="w-5 h-5" />
               </div>
               <div className="space-y-2 w-full">
-                <h4 className="font-bold text-slate-900 text-base">Phone Numbers (Click to Call)</h4>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <h5 className="font-bold text-slate-900 text-xs sm:text-sm">Phone Lines (Click to Call)</h5>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                   {hospitalInfo.phones.map((phone, i) => (
                     <a
                       key={i}
                       href={`tel:${phone.value}`}
-                      className="p-3 bg-white hover:bg-blue-50 border border-slate-200 hover:border-medical-blue rounded-xl text-center transition-all shadow-2xs group"
+                      className="p-2.5 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-medical-blue rounded-lg text-center transition-colors"
                     >
-                      <div className="text-xs text-slate-500 font-medium">Phone {i + 1}</div>
-                      <div className="text-sm font-bold text-slate-900 group-hover:text-medical-blue">
+                      <div className="text-[10px] text-slate-500 font-semibold uppercase">Line {i + 1}</div>
+                      <div className="text-xs font-bold text-slate-900">
                         {phone.display}
                       </div>
                     </a>
@@ -82,25 +103,25 @@ export function LocationContact() {
               </div>
             </div>
 
-            {/* Email & Digital Contacts */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200">
-                <Mail className="w-5 h-5 text-medical-blue shrink-0" />
+            {/* Email & Hours */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <Mail className="w-4 h-4 text-medical-blue shrink-0" />
                 <div className="overflow-hidden">
-                  <div className="text-xs text-slate-500 font-medium">Email Us</div>
+                  <div className="text-[10px] text-slate-500 font-semibold uppercase">Email</div>
                   <a
                     href={`mailto:${hospitalInfo.email}`}
-                    className="text-xs font-bold text-slate-900 hover:text-medical-blue truncate block"
+                    className="text-xs font-bold text-slate-900 hover:underline truncate block"
                   >
                     {hospitalInfo.email}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200">
-                <Clock className="w-5 h-5 text-emerald-600 shrink-0" />
+              <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <Clock className="w-4 h-4 text-emerald-600 shrink-0" />
                 <div>
-                  <div className="text-xs text-slate-500 font-medium">Working Hours</div>
+                  <div className="text-[10px] text-slate-500 font-semibold uppercase">Working Hours</div>
                   <div className="text-xs font-bold text-emerald-600">
                     Open 24 Hours / 7 Days
                   </div>
@@ -108,109 +129,108 @@ export function LocationContact() {
               </div>
             </div>
 
-            {/* WhatsApp & Social Media CTAs */}
-            <div className="pt-4 border-t border-slate-200 flex flex-wrap gap-3">
+            {/* WhatsApp & Booking CTAs */}
+            <div className="pt-2 border-t border-slate-200 flex flex-wrap gap-2.5">
               <a
                 href={`https://wa.me/${hospitalInfo.whatsappNumber}?text=Hello%20Nhyirakesi%20Hospital,%20I%20want%20to%20inquire%20about%20a%20consultation.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 min-w-[200px] inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-4 rounded-xl font-bold text-sm shadow-md transition-all"
+                className="flex-1 min-w-[180px] inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 px-4 rounded-lg font-bold text-xs shadow-2xs transition-colors"
               >
                 <MessageCircle className="w-4 h-4" />
-                Chat on WhatsApp Now
+                WhatsApp Receptionist
               </a>
 
-              <a
-                href={hospitalInfo.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-800 border border-slate-200 py-3 px-4 rounded-xl font-semibold text-sm transition-all"
+              <button
+                onClick={() => setBookingOpen(true)}
+                className="inline-flex items-center justify-center gap-2 bg-medical-red hover:bg-medical-red-hover text-white py-2.5 px-4 rounded-lg font-bold text-xs shadow-2xs transition-colors"
               >
-                <ExternalLink className="w-4 h-4 text-purple-600" />
-                Instagram
-              </a>
+                <Calendar className="w-4 h-4" />
+                Book Online
+              </button>
             </div>
 
           </div>
 
-          {/* Map Preview Card (5 Cols) */}
-          <div className="lg:col-span-5 bg-slate-900 rounded-3xl p-6 text-white shadow-xl relative overflow-hidden flex flex-col justify-between min-h-[460px]">
-            <div className="space-y-4 relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-medical-blue/30 text-blue-300 text-xs font-semibold">
-                <MapPin className="w-3.5 h-3.5" /> Takoradi Map Location
+          {/* Location Map Box (5 Cols) */}
+          <div className="lg:col-span-5 bg-slate-900 rounded-xl p-6 text-white border border-slate-800 space-y-5">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-slate-800 text-blue-300 text-xs font-semibold border border-slate-700">
+                <MapPin className="w-3.5 h-3.5" /> Location & Directions
               </div>
-              <h3 className="font-serif text-2xl font-bold">
-                Find Us in Takoradi
-              </h3>
-              <p className="text-slate-300 text-sm">
-                Near Adonai Int. Church and directly opposite Ponty International School on Adientem Road.
+              <h4 className="font-serif text-xl font-bold">
+                Finding Our Takoradi Clinic
+              </h4>
+              <p className="text-slate-300 text-xs leading-relaxed">
+                Located on Adientem Road, directly opposite Ponty International School and near Adonai Int. Church.
               </p>
 
-              {/* Graphical Location Box */}
-              <div className="p-4 bg-slate-800/90 rounded-2xl border border-slate-700/80 space-y-2">
-                <div className="flex items-center justify-between text-xs text-slate-400">
-                  <span>Street Code:</span>
-                  <span className="font-mono text-amber-400 font-bold">BU211 Polo St</span>
+              <div className="p-3 bg-slate-800 rounded-lg border border-slate-700 space-y-1 text-xs">
+                <div className="flex items-center justify-between text-slate-400">
+                  <span>Polo Street Code:</span>
+                  <span className="font-mono text-amber-400 font-bold">BU211</span>
                 </div>
-                <div className="text-sm font-bold text-white">
-                  Adientem Road, Takoradi
+                <div className="font-bold text-white">
+                  Adientem Road, Takoradi, Ghana
                 </div>
-                <div className="text-xs text-emerald-400 font-medium">
-                  ✓ Easily accessible by taxi, private vehicle & public transport
+                <div className="text-emerald-400 text-[11px] font-medium pt-0.5">
+                  ✓ Accessible by taxi, private car & public transport
                 </div>
               </div>
             </div>
 
-            {/* Direct Directions Link Button */}
-            <div className="pt-6 relative z-10 space-y-3">
+            <div className="space-y-2 pt-2 border-t border-slate-800">
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(hospitalInfo.address.fullAddress)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 bg-medical-blue hover:bg-medical-blue-dark text-white py-3.5 px-6 rounded-xl font-bold text-sm shadow-md transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 bg-medical-blue hover:bg-medical-blue-dark text-white py-2.5 px-4 rounded-lg font-bold text-xs transition-colors"
               >
                 <MapPin className="w-4 h-4" />
                 Open Directions in Google Maps
-                <ExternalLink className="w-4 h-4 ml-1 opacity-70" />
+                <ExternalLink className="w-3.5 h-3.5 opacity-70" />
               </a>
 
               <p className="text-[11px] text-slate-400 text-center">
-                Need help finding us? Call 050 588 8327 for phone guidance.
+                Phone directions available at 050 588 8327.
               </p>
             </div>
           </div>
 
         </div>
 
-        {/* FAQs Accordion Section */}
-        <div className="max-w-4xl mx-auto pt-8 border-t border-slate-200">
-          <div className="text-center mb-8">
-            <h3 className="font-serif text-2xl font-bold text-medical-dark flex items-center justify-center gap-2">
-              <HelpCircle className="w-6 h-6 text-medical-blue" />
-              Frequently Asked Questions
-            </h3>
+        {/* Real Patient FAQs Section */}
+        <div className="max-w-4xl mx-auto pt-4 border-t border-slate-200 space-y-6">
+          <div className="text-left space-y-1">
+            <h4 className="font-serif text-2xl font-bold text-slate-900 flex items-center gap-2">
+              <HelpCircle className="w-5 h-5 text-medical-blue" />
+              Frequently Asked Patient Questions
+            </h4>
+            <p className="text-slate-600 text-xs sm:text-sm">
+              Clear answers to common questions about visiting, appointments, and care protocols.
+            </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {faqList.map((faq, idx) => (
               <div
                 key={idx}
-                className="bg-slate-50 border border-slate-200/80 rounded-2xl overflow-hidden transition-colors"
+                className="bg-white border border-slate-200 rounded-lg overflow-hidden transition-colors"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === idx ? -1 : idx)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-slate-900 hover:text-medical-blue"
+                  className="w-full p-4 text-left flex items-center justify-between gap-4 font-bold text-slate-900 hover:text-medical-blue text-sm sm:text-base"
                 >
-                  <span className="text-base sm:text-lg">{faq.question}</span>
+                  <span>{faq.question}</span>
                   {openFaq === idx ? (
-                    <ChevronUp className="w-5 h-5 text-medical-blue shrink-0" />
+                    <ChevronUp className="w-4 h-4 text-medical-blue shrink-0" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 text-slate-400 shrink-0" />
+                    <ChevronDown className="w-4 h-4 text-slate-400 shrink-0" />
                   )}
                 </button>
 
                 {openFaq === idx && (
-                  <div className="px-5 pb-5 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-200/50 pt-3">
+                  <div className="px-4 pb-4 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-2">
                     {faq.answer}
                   </div>
                 )}
@@ -220,6 +240,9 @@ export function LocationContact() {
         </div>
 
       </div>
+
+      <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
     </section>
   );
 }
+

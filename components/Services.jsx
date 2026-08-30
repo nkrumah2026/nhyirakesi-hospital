@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Stethoscope, Activity, Sparkles, Clock, CheckCircle2, ArrowRight, Calendar, Info } from "lucide-react";
+import { Stethoscope, Activity, Sparkles, Clock, CheckCircle2, ArrowRight, Calendar } from "lucide-react";
 import { servicesList } from "@/content/hospitalData";
 import { BookingModal } from "./BookingModal";
 
@@ -16,81 +16,86 @@ const iconMap = {
 
 export function Services() {
   const [bookingOpen, setBookingOpen] = useState(false);
-  const [selectedServiceSlug, setSelectedServiceSlug] = useState(null);
 
   return (
-    <section id="services" className="py-16 md:py-24 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-12 md:py-16 bg-slate-50 border-t border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-medical-blue text-xs font-bold uppercase tracking-wider border border-blue-100">
-            Clinical Excellence & Natural Care
-          </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-medical-dark tracking-tight">
-            Our Healthcare & Wellness Specialties
+        {/* Section Header - Left Aligned */}
+        <div className="max-w-3xl space-y-2 text-left">
+          <h2 className="text-xs font-bold uppercase tracking-wider text-medical-blue">
+            Our Healthcare Services
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
-            We combine natural botanical medicine with scientific diagnostic tools to restore vital energy, relieve chronic pain, and foster overall health and longevity.
+          <h3 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
+            Specialized Clinical & Rehabilitation Practices
+          </h3>
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+            We provide evidence-informed natural medicine, non-surgical physical rehabilitation, and 24/7 consultations tailored to your individual health needs.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-          {servicesList.map((service, idx) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {servicesList.map((service) => {
             const IconComponent = iconMap[service.iconName] || Stethoscope;
             
+            // Contextual CTA button copy
+            const ctaText = service.id === "spine-joint-rehab"
+              ? "Book Pain Assessment"
+              : service.id === "24-7-consultation-emergency"
+              ? "Speak to Reception"
+              : "Consult a Practitioner";
+
             return (
               <div
                 key={service.id}
-                className="group relative bg-slate-50 hover:bg-white rounded-3xl overflow-hidden border border-slate-200/80 hover:border-medical-blue/30 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-2xs hover:border-slate-300 transition-colors flex flex-col justify-between"
               >
                 {/* Service Card Image Banner */}
                 {service.imagePath && (
-                  <div className="relative h-52 w-full overflow-hidden bg-slate-900">
+                  <div className="relative h-48 w-full overflow-hidden bg-slate-100 border-b border-slate-200">
                     <Image
                       src={service.imagePath}
                       alt={service.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
                     
-                    <div className="absolute top-4 left-4">
-                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-medical-blue to-medical-blue-dark text-white flex items-center justify-center shadow-lg">
-                        <IconComponent className="w-6 h-6" />
-                      </div>
+                    <div className="absolute top-3 left-3 bg-white border border-slate-200 p-2 rounded-lg shadow-2xs text-medical-blue">
+                      <IconComponent className="w-5 h-5" />
                     </div>
 
-                    <div className="absolute top-4 right-4">
-                      <span className="text-xs font-bold text-white bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
-                        0{idx + 1} Specialty
+                    <div className="absolute top-3 right-3">
+                      <span className="text-[11px] font-bold text-slate-800 bg-white/95 px-2.5 py-1 rounded-md border border-slate-200 shadow-2xs">
+                        {service.categoryName || "Specialty"}
                       </span>
                     </div>
                   </div>
                 )}
 
-                <div className="p-8">
+                <div className="p-6 space-y-4">
                   {/* Title & Short Description */}
-                  <h3 className="font-serif text-2xl font-bold text-medical-dark group-hover:text-medical-blue transition-colors mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
-                    {service.shortDesc}
-                  </p>
+                  <div className="space-y-1.5">
+                    <h4 className="font-serif text-xl sm:text-2xl font-bold text-slate-900">
+                      {service.title}
+                    </h4>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                      {service.shortDesc}
+                    </p>
+                  </div>
 
-                  {/* Highlight Badge */}
-                  <div className="bg-white p-3 rounded-xl border border-slate-200/60 text-xs font-semibold text-medical-dark mb-6 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
+                  {/* Highlight Box */}
+                  <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs font-semibold text-slate-800 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-amber-600 shrink-0" />
                     <span>{service.highlight}</span>
                   </div>
 
                   {/* Feature Bullets */}
-                  <div className="space-y-2.5 mb-8">
-                    <div className="text-xs font-bold uppercase tracking-wider text-slate-400">Key Offerings:</div>
+                  <div className="space-y-2 pt-1">
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Clinical Focus Areas:</div>
                     {service.features.map((feat, i) => (
-                      <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <div key={i} className="flex items-start gap-2 text-xs text-slate-700">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                         <span>{feat}</span>
                       </div>
                     ))}
@@ -98,21 +103,21 @@ export function Services() {
                 </div>
 
                 {/* Bottom Action Footer */}
-                <div className="px-8 pb-8 pt-4 border-t border-slate-200/60 flex items-center justify-between gap-4">
+                <div className="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between gap-4">
                   <button
                     onClick={() => setBookingOpen(true)}
-                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-medical-red hover:bg-medical-red-hover px-4 py-2.5 rounded-xl shadow-xs transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-bold text-white bg-medical-red hover:bg-medical-red-hover px-4 py-2.5 rounded-lg transition-colors shadow-2xs"
                   >
-                    <Calendar className="w-4 h-4" />
-                    Book Service
+                    <Calendar className="w-3.5 h-3.5" />
+                    {ctaText}
                   </button>
 
                   <Link
                     href={`/services/${service.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-medical-blue hover:text-medical-blue-dark group-hover:translate-x-1 transition-all"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-medical-blue hover:text-medical-blue-dark transition-colors"
                   >
                     <span>Read Details</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
@@ -120,32 +125,33 @@ export function Services() {
           })}
         </div>
 
-        {/* Bottom Banner */}
-        <div className="mt-16 bg-gradient-to-r from-medical-dark to-slate-900 text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-xl">
-          <div className="relative z-10 max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-semibold">
-              <Clock className="w-3.5 h-3.5" /> Open 24/7 Everyday
+        {/* Bottom Hospital Banner */}
+        <div className="bg-slate-900 text-white rounded-xl p-6 sm:p-8 border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="space-y-2 max-w-xl">
+            <div className="inline-flex items-center gap-1.5 text-emerald-400 text-xs font-semibold">
+              <Clock className="w-3.5 h-3.5" /> Open 24/7 in Takoradi, Ghana
             </div>
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold">
-              Need Immediate Consultation or Have Pain Symptoms?
-            </h3>
-            <p className="text-slate-300 text-sm sm:text-base">
-              Our clinical doctors and natural healthcare therapists are ready to assist you right now at our Takoradi facility.
+            <h4 className="font-serif text-xl sm:text-2xl font-bold">
+              Have Specific Symptoms or Require Immediate Guidance?
+            </h4>
+            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Call our main hospital phone lines or visit our clinic directly on Adientem Road. Walk-in consultations are welcome.
             </p>
-            <div className="pt-2 flex flex-wrap gap-4">
-              <button
-                onClick={() => setBookingOpen(true)}
-                className="bg-medical-red hover:bg-medical-red-hover text-white px-6 py-3 rounded-xl font-bold text-sm shadow-md transition-all"
-              >
-                Schedule Consultation
-              </button>
-              <a
-                href="tel:0505888327"
-                className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-xl font-bold text-sm transition-all"
-              >
-                Call Hotline: 050 588 8327
-              </a>
-            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-3 shrink-0">
+            <button
+              onClick={() => setBookingOpen(true)}
+              className="bg-medical-red hover:bg-medical-red-hover text-white px-5 py-2.5 rounded-lg font-bold text-xs shadow-2xs transition-colors"
+            >
+              Book Consultation
+            </button>
+            <a
+              href="tel:0505888327"
+              className="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 px-5 py-2.5 rounded-lg font-bold text-xs transition-colors"
+            >
+              Call 050 588 8327
+            </a>
           </div>
         </div>
 
@@ -155,3 +161,4 @@ export function Services() {
     </section>
   );
 }
+
