@@ -37,7 +37,6 @@ export function Footer() {
             </p>
 
             <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-emerald-400 text-xs font-semibold">
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
               Open 24/7 • Takoradi, Ghana
             </div>
           </div>

@@ -28,7 +28,6 @@ export function Header() {
           {/* Left Info */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
             <span className="inline-flex items-center gap-1.5 font-medium text-emerald-400">
-              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
               Open 24/7 in Takoradi
             </span>
             <span className="hidden sm:inline-block text-slate-700">|</span>

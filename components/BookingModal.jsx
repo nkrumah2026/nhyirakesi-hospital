@@ -46,7 +46,6 @@ export function BookingModal({ isOpen, onClose }) {
             <X className="w-5 h-5" />
           </button>
           <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-slate-800 text-emerald-400 text-xs font-semibold mb-1 border border-slate-700">
-            <span className="w-2 h-2 rounded-full bg-emerald-400" />
             Takoradi Clinic • Open 24/7
           </div>
           <h3 className="font-serif text-xl font-bold">Book an Appointment</h3>

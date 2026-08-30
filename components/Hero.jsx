@@ -24,7 +24,6 @@ export function Hero() {
           >
             {/* Hospital Status Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 text-xs sm:text-sm font-semibold shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
               <span>Nhyirakesi Wellness Hospital • Open 24/7 in Takoradi</span>
             </div>
 
