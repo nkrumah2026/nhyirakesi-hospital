@@ -31,6 +31,11 @@ export const metadata = {
     "Adientem road hospital",
   ],
   authors: [{ name: "Nhyirakesi Wellness Hospital" }],
+  icons: {
+    icon: "/images/logo-signboard.jpeg",
+    shortcut: "/images/logo-signboard.jpeg",
+    apple: "/images/logo-signboard.jpeg",
+  },
   openGraph: {
     title: "Nhyirakesi Wellness Hospital | Natural & Scientific Healthcare",
     description:
