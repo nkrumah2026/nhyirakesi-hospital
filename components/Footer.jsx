@@ -14,12 +14,12 @@ export function Footer() {
           {/* Brand Info (4 Cols) */}
           <div className="lg:col-span-4 space-y-3">
             <div className="flex items-center gap-3">
-              <div className="relative w-10 h-12 overflow-hidden rounded-md border border-slate-700 bg-white">
+              <div className="relative w-9 h-11 overflow-hidden rounded-md shrink-0">
                 <Image
                   src={hospitalInfo.logoPath}
                   alt="Nhyirakesi Logo"
                   fill
-                  className="object-contain p-0.5"
+                  className="object-cover"
                 />
               </div>
               <div>

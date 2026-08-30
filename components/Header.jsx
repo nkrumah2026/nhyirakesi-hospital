@@ -75,12 +75,12 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo & Hospital Name */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-11 h-13 overflow-hidden rounded-md border border-slate-300 bg-white">
+            <div className="relative w-9 h-11 overflow-hidden rounded-md shrink-0">
               <Image
                 src={hospitalInfo.logoPath}
                 alt="Nhyirakesi Logo"
                 fill
-                className="object-contain p-0.5"
+                className="object-cover"
                 priority
               />
             </div>
