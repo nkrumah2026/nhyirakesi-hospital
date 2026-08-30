@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, HeartPulse, Clock, Users, ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import { hospitalInfo, coreValues } from "@/content/hospitalData";
+import { Gallery } from "@/components/Gallery";
 
 export const metadata = {
   title: "About Us | Nhyirakesi Wellness Hospital",
@@ -54,10 +55,10 @@ export default function AboutPage() {
           <div className="lg:col-span-6">
             <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-slate-100 h-96">
               <Image
-                src={hospitalInfo.servicesFlyerPath}
-                alt="Nhyirakesi Hospital Care"
+                src={hospitalInfo.doctorPhotoPath}
+                alt="Nhyirakesi Hospital Lead Physician & Consultation Office"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
               />
             </div>
           </div>
@@ -86,6 +87,9 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
+
+        {/* Facility Gallery */}
+        <Gallery />
 
         {/* Call to Action */}
         <div className="text-center space-y-6 pt-4">

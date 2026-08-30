@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Stethoscope, Activity, Sparkles, Clock, CheckCircle2, ArrowRight, Calendar, Info } from "lucide-react";
 import { servicesList } from "@/content/hospitalData";
@@ -42,19 +43,34 @@ export function Services() {
             return (
               <div
                 key={service.id}
-                className="group relative bg-slate-50 hover:bg-white rounded-3xl p-8 border border-slate-200/80 hover:border-medical-blue/30 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="group relative bg-slate-50 hover:bg-white rounded-3xl overflow-hidden border border-slate-200/80 hover:border-medical-blue/30 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
-                <div>
-                  {/* Icon & Category Tag */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-medical-blue to-medical-blue-dark text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                      <IconComponent className="w-7 h-7" />
+                {/* Service Card Image Banner */}
+                {service.imagePath && (
+                  <div className="relative h-52 w-full overflow-hidden bg-slate-900">
+                    <Image
+                      src={service.imagePath}
+                      alt={service.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                    
+                    <div className="absolute top-4 left-4">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-medical-blue to-medical-blue-dark text-white flex items-center justify-center shadow-lg">
+                        <IconComponent className="w-6 h-6" />
+                      </div>
                     </div>
-                    <span className="text-xs font-bold text-medical-blue bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-                      0{idx + 1} Specialty
-                    </span>
-                  </div>
 
+                    <div className="absolute top-4 right-4">
+                      <span className="text-xs font-bold text-white bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+                        0{idx + 1} Specialty
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                <div className="p-8">
                   {/* Title & Short Description */}
                   <h3 className="font-serif text-2xl font-bold text-medical-dark group-hover:text-medical-blue transition-colors mb-3">
                     {service.title}
@@ -82,7 +98,7 @@ export function Services() {
                 </div>
 
                 {/* Bottom Action Footer */}
-                <div className="pt-4 border-t border-slate-200/60 flex items-center justify-between gap-4">
+                <div className="px-8 pb-8 pt-4 border-t border-slate-200/60 flex items-center justify-between gap-4">
                   <button
                     onClick={() => setBookingOpen(true)}
                     className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-medical-red hover:bg-medical-red-hover px-4 py-2.5 rounded-xl shadow-xs transition-colors"

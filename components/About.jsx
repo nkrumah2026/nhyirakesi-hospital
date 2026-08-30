@@ -24,10 +24,10 @@ export function About() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900">
               <div className="relative h-96 w-full">
                 <Image
-                  src={hospitalInfo.contactFlyerPath}
-                  alt="Nhyirakesi Wellness Hospital Facility & Info"
+                  src={hospitalInfo.receptionPhotoPath}
+                  alt="Nhyirakesi Wellness Hospital Reception Lounge"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                 />
               </div>
               

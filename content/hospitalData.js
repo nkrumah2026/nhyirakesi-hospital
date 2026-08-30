@@ -26,6 +26,10 @@ export const hospitalInfo = {
   logoPath: "/images/logo-signboard.jpeg",
   servicesFlyerPath: "/images/services-flyer.jpeg",
   contactFlyerPath: "/images/contact-info-flyer.jpeg",
+  doctorPhotoPath: "/images/doctor-consultation.jpeg",
+  receptionPhotoPath: "/images/reception-lounge.jpeg",
+  hallwayPhotoPath: "/images/hospital-hallway.jpeg",
+  treatmentsCollagePath: "/images/wellness-treatments-collage.jpeg",
 };
 
 export const servicesList = [
@@ -34,6 +38,7 @@ export const servicesList = [
     slug: "natural-scientific-health",
     title: "Natural & Scientific Medicine",
     iconName: "Stethoscope",
+    imagePath: "/images/cupping-therapy.jpeg",
     shortDesc: "Evidence-backed holistic medical solutions combining botanical therapies with modern diagnostic science.",
     fullDesc: "Our flagship practice integrates validated natural treatments with modern medical diagnostics. We address chronic conditions, metabolic disorders, and immune system health by treating the root cause rather than suppressing symptoms.",
     features: [
@@ -50,6 +55,7 @@ export const servicesList = [
     slug: "spine-joint-rehab",
     title: "Spine, Joint & Pain Management",
     iconName: "Activity",
+    imagePath: "/images/spine-joint-therapy.jpeg",
     shortDesc: "Specialized physical rehabilitation, posture correction, and non-invasive joint pain restoration.",
     fullDesc: "Pain limits your freedom. Our spine and joint rehabilitation program utilizes specialized non-invasive alignment therapies, targeted nerve relief techniques, and physical restoration protocols for arthritis, back pain, and joint wear.",
     features: [
@@ -66,6 +72,7 @@ export const servicesList = [
     slug: "wellness-longevity",
     title: "Wellness, Beauty & Anti-Aging",
     iconName: "Sparkles",
+    imagePath: "/images/eye-massage-therapy.jpeg",
     shortDesc: "Rejuvenation protocols designed to boost cellular vital force, skin health, and long-term longevity.",
     fullDesc: "True beauty and longevity begin at the cellular level. Our wellness therapies focus on detoxification, cellular rejuvenation, hormonal balance, and skin health using natural scientific methodologies.",
     features: [
@@ -82,6 +89,7 @@ export const servicesList = [
     slug: "24-7-consultation-emergency",
     title: "24/7 Clinical Consultation & Care",
     iconName: "Clock",
+    imagePath: "/images/hospital-hallway.jpeg",
     shortDesc: "Round-the-clock medical consultations, outpatient care, and wellness evaluations for families.",
     fullDesc: "Health concerns can arise at any hour. Nhyirakesi Wellness Hospital operates 24/7 to provide prompt consultations, diagnostic guidance, and immediate attention for acute health needs.",
     features: [
@@ -93,6 +101,58 @@ export const servicesList = [
     ],
     highlight: "Always open, 24 hours a day, 7 days a week."
   }
+];
+
+export const facilityGallery = [
+  {
+    id: "doctor-consultation",
+    title: "Clinical Consultation & Physician Care",
+    category: "Clinical Care",
+    imagePath: "/images/doctor-consultation.jpeg",
+    description: "Our lead physician providing expert holistic medical consultations and diagnostics.",
+  },
+  {
+    id: "reception-lounge",
+    title: "Hospital Reception & Patient Lounge",
+    category: "Facility",
+    imagePath: "/images/reception-lounge.jpeg",
+    description: "Warm, comfortable, and patient-centered waiting area at our Takoradi facility.",
+  },
+  {
+    id: "cupping-therapy",
+    title: "Hijama & Wet/Dry Cupping Therapy",
+    category: "Therapies",
+    imagePath: "/images/cupping-therapy.jpeg",
+    description: "Therapeutic cupping for blood circulation, detoxification, and muscle relief.",
+  },
+  {
+    id: "spine-joint-therapy",
+    title: "Deep Tissue & Spine Alignment Rehab",
+    category: "Therapies",
+    imagePath: "/images/spine-joint-therapy.jpeg",
+    description: "Specialized non-invasive therapy for back pain, sciatica, disc care, and joint stiffness.",
+  },
+  {
+    id: "eye-massage-therapy",
+    title: "Optical Vision & Eye Massage Therapy",
+    category: "Therapies",
+    imagePath: "/images/eye-massage-therapy.jpeg",
+    description: "Advanced optical relaxation and eye strain relief device treatment.",
+  },
+  {
+    id: "hospital-hallway",
+    title: "Clinical Suites & Patient Corridor",
+    category: "Facility",
+    imagePath: "/images/hospital-hallway.jpeg",
+    description: "Pristine clinical hallway connecting consultation offices and treatment rooms.",
+  },
+  {
+    id: "wellness-treatments-collage",
+    title: "Holistic Wellness & Physical Restoration",
+    category: "Therapies",
+    imagePath: "/images/wellness-treatments-collage.jpeg",
+    description: "Comprehensive treatments including ionic foot detox, exercise bike rehab, and therapeutic massages.",
+  },
 ];
 
 export const coreValues = [

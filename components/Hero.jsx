@@ -108,10 +108,10 @@ export function Hero() {
                 {/* Visual Header */}
                 <div className="relative h-64 sm:h-72 w-full rounded-2xl overflow-hidden bg-slate-900 mb-4 border border-slate-100">
                   <Image
-                    src={hospitalInfo.servicesFlyerPath}
-                    alt="Nhyirakesi Wellness Hospital Services"
+                    src={hospitalInfo.doctorPhotoPath}
+                    alt="Dr. at Nhyirakesi Wellness Hospital Consultation"
                     fill
-                    className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                    className="object-cover object-center hover:scale-105 transition-transform duration-700"
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
@@ -135,10 +135,10 @@ export function Hero() {
                   {/* Visual Caption Tag */}
                   <div className="absolute bottom-3 left-3 right-3 text-white">
                     <div className="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-0.5">
-                      Holistic & Scientific Healthcare
+                      Expert Physician Consultation
                     </div>
                     <div className="text-sm font-serif font-bold text-slate-100">
-                      Takoradi's Premier Wellness Destination
+                      Natural & Scientific Medical Excellence
                     </div>
                   </div>
                 </div>

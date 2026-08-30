@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, ArrowLeft, Calendar, Phone, Sparkles, Clock, ShieldCheck } from "lucide-react";
 import { servicesList, hospitalInfo } from "@/content/hospitalData";
@@ -52,6 +53,19 @@ export default async function ServiceDetailPage({ params }) {
             {service.shortDesc}
           </p>
         </div>
+
+        {/* Featured Service Image */}
+        {service.imagePath && (
+          <div className="relative h-80 sm:h-96 w-full rounded-3xl overflow-hidden shadow-xl border border-slate-200/80 bg-slate-900">
+            <Image
+              src={service.imagePath}
+              alt={service.title}
+              fill
+              className="object-cover object-center"
+              priority
+            />
+          </div>
+        )}
 
         {/* Detailed Content */}
         <div className="space-y-8 text-slate-700 text-base sm:text-lg leading-relaxed">
