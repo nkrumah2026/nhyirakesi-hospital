@@ -28,7 +28,7 @@ export function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight tracking-tight">
+            <h1 className="hero-title text-slate-900">
               Natural & Scientific Healthcare, Spine Rehabilitation & Wellness
             </h1>
 

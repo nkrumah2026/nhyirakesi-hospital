@@ -18,13 +18,10 @@ export function Services() {
         
         {/* Section Header */}
         <div className="max-w-3xl space-y-2 text-left">
-          <h2 className="text-xs font-bold uppercase tracking-wider text-medical-blue">
-            Our Healthcare Services
-          </h2>
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
+          <h2 className="section-title text-slate-900">
             Specialized Care & Rehabilitation
-          </h3>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+          </h2>
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-sans">
             We offer medical consultations, non-surgical physical rehabilitation, and supportive wellness care tailored to your health needs.
           </p>
         </div>
@@ -47,10 +44,10 @@ export function Services() {
 
                   {/* Title & Short Description */}
                   <div className="space-y-1.5">
-                    <h4 className="font-serif text-lg font-bold text-slate-900 leading-snug">
+                    <h3 className="font-serif text-lg font-bold text-slate-900 leading-snug">
                       {service.title}
-                    </h4>
-                    <p className="text-slate-600 text-xs leading-relaxed line-clamp-3">
+                    </h3>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed line-clamp-3 font-sans">
                       {service.shortDesc}
                     </p>
                   </div>
@@ -60,7 +57,7 @@ export function Services() {
                 <div className="pt-2 border-t border-slate-100">
                   <Link
                     href={`/services#${service.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-medical-blue hover:text-medical-blue-dark transition-colors group"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-medical-blue hover:text-medical-blue-dark transition-colors group font-sans"
                   >
                     <span>Learn More</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />

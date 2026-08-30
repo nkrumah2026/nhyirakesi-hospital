@@ -1,18 +1,19 @@
-import { Inter, Merriweather } from "next/font/google";
+import { Lora, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
-const inter = Inter({
+const lora = Lora({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-lora",
   display: "swap",
 });
 
-const merriweather = Merriweather({
-  weight: ["300", "400", "700", "900"],
+const sourceSans3 = Source_Sans_3({
   subsets: ["latin"],
-  variable: "--font-merriweather",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-source-sans",
   display: "swap",
 });
 
@@ -57,8 +58,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${merriweather.variable} scroll-smooth`}>
-      <body className="min-h-screen flex flex-col bg-white text-slate-900 antialiased">
+    <html lang="en" className={`${sourceSans3.variable} ${lora.variable} scroll-smooth`}>
+      <body className="min-h-screen flex flex-col bg-white text-slate-900 antialiased font-sans">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
