@@ -33,16 +33,16 @@ export function Hero() {
               Natural & Scientific Healthcare, Spine Rehabilitation & Wellness
             </h1>
 
-            {/* Subheading / Slogan */}
+            {/* Clear, Human Subheading */}
             <p className="text-slate-600 text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
-              Combining modern medical evaluations with evidence-informed natural therapies to provide relief from chronic pain, physical rehabilitation, and patient-centered care in Takoradi, Ghana.
+              Medical consultations, non-surgical spine and joint care, and supportive natural therapies provided by dedicated healthcare practitioners in Takoradi, Ghana.
             </p>
 
-            {/* Key Feature Highlights */}
+            {/* Key Service Badges */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1 max-w-xl">
               <div className="flex items-center gap-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-2xs text-xs font-semibold text-slate-800">
                 <ShieldCheck className="w-4 h-4 text-medical-blue shrink-0" />
-                <span>Natural & Diagnostic Care</span>
+                <span>Natural & Clinical Care</span>
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-2xs text-xs font-semibold text-slate-800">
                 <HeartPulse className="w-4 h-4 text-medical-red shrink-0" />
@@ -50,7 +50,7 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-2xs text-xs font-semibold text-slate-800">
                 <Clock className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>24/7 Clinical Care</span>
+                <span>Open 24/7 Support</span>
               </div>
             </div>
 
@@ -58,10 +58,10 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <button
                 onClick={() => setBookingOpen(true)}
-                className="inline-flex items-center justify-center gap-2 bg-medical-red hover:bg-medical-red-hover text-white px-6 py-3 rounded-lg font-bold text-sm shadow-sm transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-medical-red hover:bg-medical-red-hover text-white px-6 py-3 rounded-lg font-bold text-sm shadow-2xs transition-colors"
               >
                 <Calendar className="w-4 h-4" />
-                <span>Book Consultation</span>
+                <span>Book Appointment</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
@@ -77,7 +77,7 @@ export function Hero() {
             {/* Hospital Landmark Info */}
             <div className="pt-3 text-xs text-slate-500 flex flex-wrap items-center gap-1.5">
               <span className="font-semibold text-slate-700">Location:</span>
-              <span>BU211 Polo St, Adientem Rd (Opposite Ponty Int. School), Takoradi</span>
+              <span>BU211 Polo Street, Adientem Road (Opposite Ponty Int. School), Takoradi</span>
             </div>
           </motion.div>
 
@@ -88,13 +88,13 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="lg:col-span-5"
           >
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-md p-4 space-y-4">
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 space-y-4">
               
               {/* Photo */}
               <div className="relative h-64 sm:h-72 w-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
                 <Image
                   src={hospitalInfo.doctorPhotoPath}
-                  alt="Doctor consultation at Nhyirakesi Wellness Hospital"
+                  alt="Medical Consultation at Nhyirakesi Wellness Hospital"
                   fill
                   className="object-cover object-center"
                   priority
@@ -105,14 +105,14 @@ export function Hero() {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <h3 className="font-serif font-bold text-base text-slate-900">
-                    Physician Consultation & Care
+                    Medical Consultation Suite
                   </h3>
                   <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
                     Takoradi Facility
                   </span>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Our clinical practitioners provide thorough health consultations, integrating medical diagnostics with personalized natural health plans.
+                  Our clinical team provides patient consultations combining medical evaluations with practical natural health guidance.
                 </p>
               </div>
 
@@ -122,7 +122,7 @@ export function Hero() {
                   <CheckCircle className="w-4 h-4" /> Open 24/7
                 </span>
                 <a href={`tel:${hospitalInfo.phones[0].value}`} className="text-medical-blue hover:underline font-bold">
-                  Emergency: {hospitalInfo.phones[0].display}
+                  Hotline: {hospitalInfo.phones[0].display}
                 </a>
               </div>
 
@@ -136,4 +136,3 @@ export function Hero() {
     </section>
   );
 }
-

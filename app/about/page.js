@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ShieldCheck, HeartPulse, Clock, Users } from "lucide-react";
-import { hospitalInfo, coreValues, careTeam } from "@/content/hospitalData";
+import { hospitalInfo, coreValues } from "@/content/hospitalData";
 import { Gallery } from "@/components/Gallery";
 
 export const metadata = {
   title: "About Us | Nhyirakesi Wellness Hospital",
-  description: "Learn about Nhyirakesi Wellness Hospital's mission, healthcare philosophy, and patient-centered clinical care in Takoradi, Ghana.",
+  description: "Learn about Nhyirakesi Wellness Hospital's mission, patient care approach, and healthcare facility in Takoradi, Ghana.",
 };
 
 export default function AboutPage() {
@@ -19,10 +18,10 @@ export default function AboutPage() {
             About Nhyirakesi Hospital
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight">
-            Our Healthcare Mission & Philosophy
+            Our Healthcare Facility & Patient Care
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
-            Providing holistic, scientific, and natural medical solutions to restore health, relieve chronic pain, and improve patient wellbeing in Takoradi.
+            Providing accessible medical consultations, non-surgical physical rehabilitation, and natural healthcare in Takoradi.
           </p>
         </div>
       </section>
@@ -33,13 +32,13 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-6 space-y-4">
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
-              Natural Therapies & Modern Medical Care
+              Natural Remedies & Modern Clinical Care
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Located on Adientem Road in Takoradi, <strong className="text-slate-900">Nhyirakesi Wellness Hospital</strong> provides patient-focused health care that combines clinical diagnostic evaluations with evidence-informed natural medicine.
+              Located on Adientem Road in Takoradi, <strong className="text-slate-900">Nhyirakesi Wellness Hospital</strong> provides patient-focused healthcare that combines standard clinical evaluations with safe, supportive natural medicine.
             </p>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Our team works closely with each patient to evaluate underlying health factors, manage chronic conditions, and provide non-surgical physical rehabilitation for joint and spine pain.
+              Our clinical practitioners perform thorough patient evaluations, assist in managing ongoing conditions, and provide targeted non-surgical rehabilitation for back, joint, and nerve pain.
             </p>
 
             <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
@@ -47,16 +46,16 @@ export default function AboutPage() {
                 "{hospitalInfo.slogan}"
               </p>
               <p className="text-xs text-slate-500">
-                Guiding every consultation, therapy session, and treatment plan at our Takoradi facility.
+                Adientem Road, Takoradi • Open 24/7
               </p>
             </div>
           </div>
 
           <div className="lg:col-span-6">
-            <div className="relative rounded-2xl overflow-hidden shadow-md border border-slate-200 h-80 sm:h-96">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xs border border-slate-200 h-80 sm:h-96">
               <Image
                 src={hospitalInfo.doctorPhotoPath}
-                alt="Nhyirakesi Hospital Lead Physician & Consultation Office"
+                alt="Nhyirakesi Hospital Physician Consultation Office"
                 fill
                 className="object-cover object-center"
               />
@@ -64,14 +63,14 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Pillars Grid */}
+        {/* Core Principles Grid */}
         <div className="bg-slate-50 rounded-xl p-6 sm:p-10 border border-slate-200 space-y-6">
           <div className="text-left max-w-2xl">
             <h3 className="font-serif text-2xl font-bold text-slate-900">
-              Pillars of Our Practice
+              Principles of Our Practice
             </h3>
             <p className="text-slate-600 text-xs sm:text-sm mt-1">
-              Built on patient safety, scientific evidence, and attentive care.
+              Built on patient safety, attentive consultations, and clear communication.
             </p>
           </div>
 
@@ -94,7 +93,7 @@ export default function AboutPage() {
         {/* Call to Action */}
         <div className="text-center space-y-4 pt-4 border-t border-slate-200">
           <h3 className="font-serif text-2xl font-bold text-slate-900">
-            Have Questions or Need a Medical Evaluation?
+            Need a Medical Consultation or Information?
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
@@ -116,4 +115,3 @@ export default function AboutPage() {
     </div>
   );
 }
-

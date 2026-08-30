@@ -37,73 +37,101 @@ export const servicesList = [
     id: "natural-scientific-health",
     slug: "natural-scientific-health",
     title: "Natural & Scientific Medicine",
+    shortTitle: "Natural Medicine",
     categoryName: "General Practice",
     iconName: "Stethoscope",
     imagePath: "/images/cupping-therapy.jpeg",
-    shortDesc: "Comprehensive medical evaluations combining validated botanical therapies with modern diagnostic assessments.",
-    fullDesc: "Our practice integrates evidence-informed botanical medicine with standard clinical diagnostics. We focus on identifying the underlying causes of health concerns, managing chronic conditions, and supporting long-term health.",
-    features: [
-      "Comprehensive Patient Health Assessments",
-      "Evidence-Informed Phytotherapy",
-      "Chronic Condition Support & Care",
-      "Dietary & Nutritional Consultation",
-      "Preventive Health & Immunity Guidance"
+    shortDesc: "Personalized healthcare combining clinical medical assessments with natural botanical and supportive remedies.",
+    fullDesc: "Our practice integrates proven botanical remedies with standard medical assessments to treat health concerns safely and effectively. We focus on understanding your overall health and creating clear, practical treatment plans.",
+    howWeCanHelp: [
+      "Chronic illness management and general health monitoring",
+      "Nutritional guidance and dietary support for ongoing wellness",
+      "Safe integration of natural botanical remedies alongside regular medications",
+      "Preventive evaluations to support immune health and vitality"
     ],
-    highlight: "Combining natural therapies with diagnostic evaluations."
+    availableTreatments: [
+      "Clinical Patient Assessments & Consultation",
+      "Botanical & Herbal Remedy Guidance",
+      "Dietary & Lifestyle Counseling",
+      "Preventive Health Guidance"
+    ],
+    whatToExpect: "During your visit, a practitioner will review your symptoms, take a detailed medical history, perform standard clinical checks, and outline a realistic care plan combining clinical advice and supportive natural therapies.",
+    highlight: "Personalized healthcare combining medical assessment with natural therapies."
   },
   {
     id: "spine-joint-rehab",
     slug: "spine-joint-rehab",
-    title: "Spine, Joint & Pain Rehabilitation",
-    categoryName: "Pain Care",
+    title: "Spine, Joint & Pain Care",
+    shortTitle: "Spine & Joint Care",
+    categoryName: "Pain Rehabilitation",
     iconName: "Activity",
     imagePath: "/images/spine-joint-therapy.jpeg",
-    shortDesc: "Non-surgical physical therapy, spinal alignment, and targeted rehabilitation for back, joint, and nerve pain.",
-    fullDesc: "Specialized non-invasive rehabilitation designed to relieve back pain, sciatica, arthritis discomfort, and joint stiffness through physical restoration protocols and targeted posture correction.",
-    features: [
-      "Spinal Alignment & Posture Correction",
-      "Sciatica & Nerve Compression Relief",
-      "Arthritis & Joint Wear Management",
-      "Non-Surgical Musculoskeletal Therapy",
-      "Flexibility & Movement Restoration"
+    shortDesc: "Non-surgical physical therapy and spine alignment to relieve back, joint, sciatica, and chronic mobility pain.",
+    fullDesc: "Specialized non-surgical physical rehabilitation designed to ease back pain, joint stiffness, sciatica, and nerve discomfort. We use targeted alignment techniques and physical exercises to help restore comfortable movement.",
+    howWeCanHelp: [
+      "Lower back pain, upper back stiffness, and posture-related strain",
+      "Sciatica, pinched nerves, and radiating leg or neck pain",
+      "Joint pain, knee discomfort, and age-related mobility issues",
+      "Recovery support following minor musculoskeletal injuries"
     ],
-    highlight: "Non-surgical pain relief and physical therapy."
+    availableTreatments: [
+      "Spinal Alignment & Posture Adjustment",
+      "Sciatica & Nerve Pressure Relief Therapy",
+      "Joint Mobility & Stiffness Rehabilitation",
+      "Therapeutic Stretching & Physical Care"
+    ],
+    whatToExpect: "Your therapist will examine your spine, posture, and joint movement, identify areas of tension or compression, and apply gentle physical therapies and stretches designed to reduce pain and restore flexibility.",
+    highlight: "Non-surgical physical therapies for spinal alignment and mobility."
   },
   {
     id: "wellness-longevity",
     slug: "wellness-longevity",
-    title: "Wellness & Rejuvenation Therapies",
-    categoryName: "Therapies",
+    title: "Beauty & Wellness Therapies",
+    shortTitle: "Beauty & Wellness",
+    categoryName: "Therapeutic Care",
     iconName: "Sparkles",
     imagePath: "/images/eye-massage-therapy.jpeg",
-    shortDesc: "Therapeutic care focused on circulation support, stress reduction, physical restoration, and eye relaxation.",
-    fullDesc: "Restorative treatments designed to support physical recovery, ease muscle tension, improve circulation, and promote overall wellness in a comfortable clinical environment.",
-    features: [
-      "Circulation & Detoxification Care",
-      "Hijama & Cupping Physical Therapy",
-      "Optical Vision & Eye Strain Relief",
-      "Stress Reduction & Relaxation",
-      "Customized Wellness Guidance"
+    shortDesc: "Supportive wellness treatments designed for stress relief, circulation support, optical relaxation, and healthy skin.",
+    fullDesc: "Restorative therapies created to reduce tension, support healthy blood circulation, relieve eye strain, and promote overall physical well-being in a calm, professional environment.",
+    howWeCanHelp: [
+      "Persistent stress, muscular tension, and physical fatigue",
+      "Poor circulation, heavy legs, and bodily stiffness",
+      "Digital eye strain, tension headaches, and facial fatigue",
+      "General skin wellness and relaxing bodily recovery"
     ],
-    highlight: "Restorative care for physical recovery and tension relief."
+    availableTreatments: [
+      "Hijama & Cupping Therapy",
+      "Optical Vision Strain Relief & Eye Massage",
+      "Circulation & Detox Support Care",
+      "Stress Reduction & Physical Relaxation"
+    ],
+    whatToExpect: "You will receive therapy in a quiet, sanitized clinical room. Our practitioners explain each step before starting to ensure your complete comfort throughout the session.",
+    highlight: "Wellness and beauty care designed to support healthy skin and well-being."
   },
   {
     id: "24-7-consultation-emergency",
     slug: "24-7-consultation-emergency",
-    title: "24/7 Clinical Consultation & Urgent Care",
-    categoryName: "Clinical Care",
+    title: "24/7 Consultation & Support",
+    shortTitle: "Consultation & Support",
+    categoryName: "Clinical Support",
     iconName: "Clock",
     imagePath: "/images/hospital-hallway.jpeg",
-    shortDesc: "Round-the-clock medical consultations, outpatient care, and walk-in clinical evaluations for individuals and families.",
-    fullDesc: "Nhyirakesi Wellness Hospital operates 24 hours a day, 7 days a week to provide prompt medical consultations, clinical assistance, and diagnostic guidance whenever you need it.",
-    features: [
-      "24/7 Physician Consultations",
-      "Outpatient Clinical Care",
-      "Preventive Health Screenings",
-      "Walk-In Clinical Evaluations",
-      "Family Health & Consultation Services"
+    shortDesc: "Round-the-clock medical consultations, outpatient evaluations, and clinical support whenever you need care.",
+    fullDesc: "Nhyirakesi Wellness Hospital operates 24 hours a day, 7 days a week in Takoradi to provide accessible medical consultations, physical evaluations, and health advice for individuals and families.",
+    howWeCanHelp: [
+      "Immediate medical consultations for sudden symptoms or discomfort",
+      "Outpatient health assessments and routine wellness checks",
+      "Walk-in visits for individuals who need quick clinical guidance",
+      "Follow-up care and long-term health consultations"
     ],
-    highlight: "Open 24 hours a day, 7 days a week in Takoradi."
+    availableTreatments: [
+      "24/7 Practitioner Consultations",
+      "Outpatient Clinical Screenings",
+      "Walk-in Medical Advice & Guidance",
+      "Family Health Consultations"
+    ],
+    whatToExpect: "You can walk in at any time of day or night. Our reception team will register your details immediately and pair you with an available physician for consultation.",
+    highlight: "Open 24 hours a day, 7 days a week on Adientem Road, Takoradi."
   }
 ];
 
@@ -111,22 +139,22 @@ export const firstVisitSteps = [
   {
     step: "01",
     title: "Book or Walk In",
-    description: "Schedule online, call our receptionists directly, or walk into our facility on Adientem Road, Takoradi at any time."
+    description: "Schedule online, call our reception line, or visit our facility on Adientem Road, Takoradi at any time."
   },
   {
     step: "02",
-    title: "Initial Consultation",
-    description: "Meet with our clinical team to discuss your health history, current symptoms, and specific concerns."
+    title: "Consultation",
+    description: "Discuss your health history, current symptoms, and specific goals with a practitioner."
   },
   {
     step: "03",
-    title: "Diagnostic Assessment",
-    description: "Undergo necessary evaluations to understand the underlying causes of your discomfort or condition."
+    title: "Health Assessment",
+    description: "Receive standard clinical evaluations to understand the underlying causes of your concern."
   },
   {
     step: "04",
     title: "Personalized Care Plan",
-    description: "Receive a clear treatment plan combining natural therapies, physical rehabilitation, and lifestyle recommendations."
+    description: "Receive a clear care plan combining natural therapies, physical rehabilitation, and practical advice."
   }
 ];
 
@@ -134,13 +162,13 @@ export const careTeam = [
   {
     name: "Medical Consultation Team",
     role: "Physicians & Practitioners",
-    bio: "Our medical practitioners provide patient-focused consultations, combining modern diagnostics with natural therapeutic solutions.",
+    bio: "Our medical team provides patient-focused consultations, combining standard diagnostics with supportive natural therapies.",
     imagePath: "/images/doctor-consultation.jpeg"
   },
   {
     name: "Physical Therapy Team",
     role: "Rehabilitation Specialists",
-    bio: "Specialized practitioners focusing on spine alignment, joint pain relief, cupping therapy, and non-surgical mobility restoration.",
+    bio: "Experienced practitioners specializing in spine alignment, joint care, cupping therapy, and non-surgical mobility support.",
     imagePath: "/images/spine-joint-therapy.jpeg"
   }
 ];
@@ -151,71 +179,71 @@ export const facilityGallery = [
     title: "Physician Consultation Suite",
     category: "Clinical Care",
     imagePath: "/images/doctor-consultation.jpeg",
-    description: "Private clinical room for physician consultations and patient health assessments.",
+    description: "Private room for medical consultations and patient health assessments.",
   },
   {
     id: "reception-lounge",
     title: "Hospital Reception & Lounge",
     category: "Facility",
     imagePath: "/images/reception-lounge.jpeg",
-    description: "Comfortable waiting area for patients and accompanying family members.",
+    description: "Comfortable waiting area for patients and accompanying visitors.",
   },
   {
     id: "cupping-therapy",
     title: "Cupping Therapy Room",
     category: "Therapies",
     imagePath: "/images/cupping-therapy.jpeg",
-    description: "Therapeutic room equipped for Hijama wet and dry cupping treatments.",
+    description: "Clean, professional room for Hijama wet and dry cupping treatments.",
   },
   {
     id: "spine-joint-therapy",
     title: "Spine & Joint Rehabilitation Room",
     category: "Therapies",
     imagePath: "/images/spine-joint-therapy.jpeg",
-    description: "Specialized therapy space for back pain relief, disc care, and spinal alignment.",
+    description: "Dedicated space for back pain care, joint alignment, and physical therapy.",
   },
   {
     id: "eye-massage-therapy",
     title: "Eye Relaxation Room",
     category: "Therapies",
     imagePath: "/images/eye-massage-therapy.jpeg",
-    description: "Dedicated space for optical strain relief and therapeutic eye massage care.",
+    description: "Calm environment for optical strain relief and eye relaxation care.",
   },
   {
     id: "hospital-hallway",
     title: "Clinical Corridor",
     category: "Facility",
     imagePath: "/images/hospital-hallway.jpeg",
-    description: "Pristine hallway connecting physician consultation offices and treatment rooms.",
+    description: "Well-maintained corridor connecting consultation offices and treatment rooms.",
   },
   {
     id: "wellness-treatments-collage",
-    title: "Rehabilitation & Wellness Area",
+    title: "Rehabilitation Area",
     category: "Therapies",
     imagePath: "/images/wellness-treatments-collage.jpeg",
-    description: "Treatment area equipped for physical recovery, foot detox, and muscle therapy.",
+    description: "Treatment space equipped for physical recovery, foot detox, and muscle care.",
   },
 ];
 
 export const coreValues = [
   {
-    title: "Scientific Integrity",
-    description: "Every natural remedy and clinical treatment we provide is guided by sound health principles and patient safety.",
+    title: "Clinical Safety",
+    description: "Every treatment and natural remedy we offer is guided by medical safety and patient-first principles.",
     iconName: "ShieldCheck"
   },
   {
     title: "Patient-Centered Care",
-    description: "We listen to your health concerns and design treatment plans tailored to your specific needs.",
+    description: "We listen to your health concerns and design clear treatment plans tailored to your needs.",
     iconName: "HeartPulse"
   },
   {
-    title: "24/7 Availability",
-    description: "Our hospital doors and consultation lines remain open round-the-clock for Takoradi residents and visitors.",
+    title: "Open 24/7",
+    description: "Our clinic doors and consultation lines remain open round-the-clock for Takoradi residents.",
     iconName: "Clock"
   },
   {
-    title: "Clear Communication",
-    description: "We help you understand your diagnosis, treatment options, and recovery progress at every step.",
+    title: "Clear Guidance",
+    description: "We explain your diagnosis and treatment options simply so you feel informed and confident.",
     iconName: "Users"
   }
 ];
@@ -223,11 +251,11 @@ export const coreValues = [
 export const faqList = [
   {
     question: "Do I need an appointment before visiting Nhyirakesi Hospital?",
-    answer: "While scheduling an appointment in advance helps minimize your waiting time, walk-in patients are always welcome. We operate 24/7."
+    answer: "Appointments help minimize waiting time, but walk-in patients are always welcome. We are open 24/7."
   },
   {
     question: "What should I bring for my first consultation?",
-    answer: "Please bring a valid photo ID, any previous medical reports or imaging (X-rays/scans) if available, and a list of any current medications you are taking."
+    answer: "Please bring a valid photo ID, any previous medical records or scans if available, and a list of current medications."
   },
   {
     question: "Where is the hospital located in Takoradi?",
@@ -235,11 +263,10 @@ export const faqList = [
   },
   {
     question: "What conditions are treated in your Spine & Joint clinic?",
-    answer: "We treat back pain, sciatica, joint stiffness, knee discomfort, neck strain, arthritis pain, and posture-related issues using non-surgical alignment and physical therapy."
+    answer: "We treat lower back pain, sciatica, joint stiffness, knee discomfort, neck strain, and posture concerns using non-surgical physical alignment therapies."
   },
   {
-    question: "Are your consultations and care available 24/7?",
-    answer: "Yes, Nhyirakesi Wellness Hospital is open 24 hours a day, 7 days a week for medical consultations, physical therapy inquiries, and clinical care."
+    question: "Are your medical consultations available 24/7?",
+    answer: "Yes, Nhyirakesi Wellness Hospital is open 24 hours a day, 7 days a week for consultations, physical therapy inquiries, and clinical care."
   }
 ];
-

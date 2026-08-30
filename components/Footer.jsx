@@ -38,7 +38,7 @@ export function Footer() {
 
             <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-emerald-400 text-xs font-semibold">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              Open 24 Hours • Takoradi, Ghana
+              Open 24/7 • Takoradi, Ghana
             </div>
           </div>
 
@@ -60,7 +60,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/services" className="hover:text-white transition-colors">
-                  Healthcare Specialties
+                  Healthcare Services & Specialties
                 </Link>
               </li>
               <li>
@@ -79,8 +79,8 @@ export function Footer() {
             <ul className="space-y-2 text-xs">
               {servicesList.map((srv) => (
                 <li key={srv.id}>
-                  <Link href={`/services/${srv.slug}`} className="hover:text-white transition-colors">
-                    {srv.title}
+                  <Link href={`/services#${srv.slug}`} className="hover:text-white transition-colors">
+                    {srv.shortTitle || srv.title}
                   </Link>
                 </li>
               ))}
@@ -152,4 +152,3 @@ export function Footer() {
     </footer>
   );
 }
-

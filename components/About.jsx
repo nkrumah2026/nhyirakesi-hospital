@@ -14,7 +14,7 @@ const iconMap = {
 export function About() {
   return (
     <section id="about" className="py-12 md:py-16 bg-white border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
         
         {/* Top Story Grid - Split Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -26,15 +26,15 @@ export function About() {
             </h2>
 
             <h3 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Bridging Natural Therapies & Clinical Medicine
+              Patient Care Dedicated to Community Health
             </h3>
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-              Located on Adientem Road in Takoradi, <strong className="text-slate-900 font-semibold">Nhyirakesi Wellness Hospital</strong> provides holistic medical care, specialized spine rehabilitation, and preventive health guidance to patients across Takoradi and surrounding communities.
+              Located on Adientem Road in Takoradi, <strong className="text-slate-900 font-semibold">Nhyirakesi Wellness Hospital</strong> provides general medical consultations, non-surgical spine rehabilitation, and supportive wellness therapies for individuals and families across the Western Region.
             </p>
 
             <div className="p-4 bg-slate-50 border-l-4 border-medical-blue rounded-r-lg space-y-1">
-              <p className="font-serif italic text-slate-800 text-sm sm:text-base font-semibold">
+              <p className="font-serif text-slate-800 text-sm sm:text-base font-semibold">
                 "{hospitalInfo.slogan}"
               </p>
               <p className="text-xs text-slate-500">
@@ -46,10 +46,10 @@ export function About() {
               <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-1">
                 <div className="font-bold text-slate-900 text-sm flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
-                  Evidence-Informed Phytotherapy
+                  Natural & Medical Guidance
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Botanical medicine integrated with clinical diagnostic evaluations.
+                  Botanical remedies integrated safely with medical evaluations.
                 </p>
               </div>
 
@@ -59,7 +59,7 @@ export function About() {
                   Spine & Joint Alignment
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Non-surgical physical rehabilitation for sciatica, back, and joint pain.
+                  Non-surgical physical rehabilitation for sciatica and back pain.
                 </p>
               </div>
             </div>
@@ -67,7 +67,7 @@ export function About() {
 
           {/* Right Visual Column */}
           <div className="lg:col-span-5">
-            <div className="bg-slate-50 rounded-2xl p-3 border border-slate-200 shadow-sm space-y-3">
+            <div className="bg-slate-50 rounded-2xl p-3 border border-slate-200 shadow-2xs space-y-3">
               <div className="relative h-72 sm:h-80 w-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
                 <Image
                   src={hospitalInfo.receptionPhotoPath}
@@ -79,10 +79,10 @@ export function About() {
 
               <div className="p-2 space-y-1">
                 <h4 className="font-serif font-bold text-slate-900 text-base">
-                  Hospital Reception & Patient Care Center
+                  Hospital Reception & Patient Lounge
                 </h4>
                 <p className="text-xs text-slate-600">
-                  Located at BU211 Polo Street, Adientem Road (Opposite Ponty Int. School). Open 24/7.
+                  BU211 Polo Street, Adientem Road (Opposite Ponty Int. School). Open 24/7.
                 </p>
               </div>
             </div>
@@ -97,7 +97,7 @@ export function About() {
               Our Healthcare Practitioners
             </h3>
             <p className="text-slate-600 text-sm mt-1">
-              Dedicated clinical physicians and physical therapy specialists serving our Takoradi facility.
+              Experienced physicians and physical therapy specialists serving our Takoradi facility.
             </p>
           </div>
 
@@ -132,10 +132,10 @@ export function About() {
         <div className="space-y-6 pt-4 border-t border-slate-200">
           <div className="text-left max-w-2xl">
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
-              Our Principles of Medical Care
+              Our Principles of Care
             </h3>
             <p className="text-slate-600 text-sm mt-1">
-              Guiding how we consult, treat, and support every patient who visits us.
+              Guiding how we consult, treat, and support every patient who visits our hospital.
             </p>
           </div>
 
@@ -164,4 +164,3 @@ export function About() {
     </section>
   );
 }
-

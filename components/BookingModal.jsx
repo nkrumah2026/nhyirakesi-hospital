@@ -191,4 +191,3 @@ export function BookingModal({ isOpen, onClose }) {
     </div>
   );
 }
-

@@ -22,19 +22,19 @@ export function Header() {
 
   return (
     <>
-      {/* Top Announcement & Emergency Contact Bar */}
+      {/* Top Announcement & Contact Bar */}
       <div className="bg-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
           {/* Left Info */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
             <span className="inline-flex items-center gap-1.5 font-medium text-emerald-400">
               <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-              {hospitalInfo.status} in Takoradi
+              Open 24/7 in Takoradi
             </span>
             <span className="hidden sm:inline-block text-slate-700">|</span>
             <span className="inline-flex items-center gap-1 text-slate-300">
               <MapPin className="w-3.5 h-3.5 text-medical-blue" />
-              Adientem Road, Takoradi, Ghana
+              BU211 Polo Street, Adientem Road, Takoradi
             </span>
           </div>
 
@@ -78,7 +78,7 @@ export function Header() {
             <div className="relative w-11 h-13 overflow-hidden rounded-md border border-slate-300 bg-white">
               <Image
                 src={hospitalInfo.logoPath}
-                alt="Nhyirakesi Hospital Logo"
+                alt="Nhyirakesi Logo"
                 fill
                 className="object-contain p-0.5"
                 priority
@@ -193,4 +193,3 @@ export function Header() {
     </>
   );
 }
-

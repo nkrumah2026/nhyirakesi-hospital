@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, MessageCircle, ExternalLink, HelpCircle, ChevronDown, ChevronUp, CheckCircle, Calendar } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageCircle, ExternalLink, HelpCircle, ChevronDown, ChevronUp, Calendar } from "lucide-react";
 import { hospitalInfo, faqList, firstVisitSteps } from "@/content/hospitalData";
 import { BookingModal } from "./BookingModal";
 
@@ -11,7 +11,7 @@ export function LocationContact() {
 
   return (
     <section id="contact" className="py-12 md:py-16 bg-slate-50 border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
         
         {/* Section Header - Left Aligned */}
         <div className="max-w-3xl space-y-2 text-left">
@@ -59,7 +59,7 @@ export function LocationContact() {
           <div className="lg:col-span-7 bg-white rounded-xl p-6 sm:p-8 border border-slate-200 shadow-2xs space-y-6">
             <div className="border-b border-slate-200 pb-3">
               <h4 className="font-serif text-xl font-bold text-slate-900">
-                Direct Contact Lines
+                Direct Hospital Lines
               </h4>
               <p className="text-slate-600 text-xs mt-0.5">
                 Our receptionists and clinical team are available 24 hours a day.
@@ -123,7 +123,7 @@ export function LocationContact() {
                 <div>
                   <div className="text-[10px] text-slate-500 font-semibold uppercase">Working Hours</div>
                   <div className="text-xs font-bold text-emerald-600">
-                    Open 24 Hours / 7 Days
+                    Open 24/7
                   </div>
                 </div>
               </div>
@@ -146,7 +146,7 @@ export function LocationContact() {
                 className="inline-flex items-center justify-center gap-2 bg-medical-red hover:bg-medical-red-hover text-white py-2.5 px-4 rounded-lg font-bold text-xs shadow-2xs transition-colors"
               >
                 <Calendar className="w-4 h-4" />
-                Book Online
+                Book an Appointment
               </button>
             </div>
 
@@ -245,4 +245,3 @@ export function LocationContact() {
     </section>
   );
 }
-
