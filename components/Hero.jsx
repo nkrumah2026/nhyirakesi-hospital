@@ -22,11 +22,6 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-7 space-y-6 text-left"
           >
-            {/* Hospital Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 text-xs sm:text-sm font-semibold shadow-2xs">
-              <span>Nhyirakesi Wellness Hospital • Open 24/7 in Takoradi</span>
-            </div>
-
             {/* Main Headline */}
             <h1 className="hero-title text-slate-900">
               Natural & Scientific Healthcare, Spine Rehabilitation & Wellness
