@@ -35,10 +35,6 @@ export function Footer() {
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
               "{hospitalInfo.slogan}"
             </p>
-
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-emerald-400 text-xs font-semibold">
-              Open 24/7 • Takoradi, Ghana
-            </div>
           </div>
 
           {/* Quick Navigation Links (3 Cols) */}

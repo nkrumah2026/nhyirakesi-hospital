@@ -83,7 +83,7 @@ export function LocationContact() {
               </div>
               <div className="space-y-2 w-full">
                 <h4 className="font-semibold text-slate-900 text-xs sm:text-sm">Phone Lines (Click to Call)</h4>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   {hospitalInfo.phones.map((phone, i) => (
                     <a
                       key={i}

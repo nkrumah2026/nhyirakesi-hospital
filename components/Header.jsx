@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MapPin, MessageCircle, Menu, X, Calendar } from "lucide-react";
+import { Phone, Menu, X, Calendar } from "lucide-react";
 import { hospitalInfo } from "@/content/hospitalData";
 import { BookingModal } from "./BookingModal";
 
@@ -22,49 +22,6 @@ export function Header() {
 
   return (
     <>
-      {/* Top Announcement & Contact Bar */}
-      <div className="bg-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-          {/* Left Info */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
-            <span className="inline-flex items-center gap-1.5 font-medium text-emerald-400">
-              Open 24/7 in Takoradi
-            </span>
-            <span className="hidden sm:inline-block text-slate-700">|</span>
-            <span className="inline-flex items-center gap-1 text-slate-300">
-              <MapPin className="w-3.5 h-3.5 text-medical-blue" />
-              BU211 Polo Street, Adientem Road, Takoradi
-            </span>
-          </div>
-
-          {/* Right Phone Contacts */}
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2.5 font-semibold text-white">
-              <Phone className="w-3.5 h-3.5 text-medical-red" />
-              <span className="text-slate-400 text-[11px] uppercase font-bold">Hotline:</span>
-              <a href={`tel:${hospitalInfo.phones[0].value}`} className="hover:text-medical-blue transition-colors">
-                {hospitalInfo.phones[0].display}
-              </a>
-              <span className="hidden lg:inline text-slate-700">|</span>
-              <a href={`tel:${hospitalInfo.phones[1].value}`} className="hidden lg:inline hover:text-medical-blue transition-colors">
-                {hospitalInfo.phones[1].display}
-              </a>
-            </div>
-
-            {/* WhatsApp Quick CTA */}
-            <a
-              href={`https://wa.me/${hospitalInfo.whatsappNumber}?text=Hello%20Nhyirakesi%20Wellness%20Hospital,%20I%20would%20like%20to%20inquire%20about%20your%20services.`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1 rounded-md font-medium text-xs transition-colors"
-            >
-              <MessageCircle className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">WhatsApp</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Sticky Header */}
       <header
         className={`sticky top-0 z-40 bg-white border-b border-slate-200 transition-all duration-200 ${

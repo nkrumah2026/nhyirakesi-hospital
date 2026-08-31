@@ -14,6 +14,7 @@ export const hospitalInfo = {
   },
   phones: [
     { display: "050 588 8327", value: "0505888327", isPrimary: true, isWhatsapp: true },
+    { display: "050 090 1990", value: "0500901990", isPrimary: false, isWhatsapp: false },
     { display: "059 143 4840", value: "0591434840", isPrimary: false, isWhatsapp: false },
     { display: "020 760 0777", value: "0207600777", isPrimary: false, isWhatsapp: false },
   ],
