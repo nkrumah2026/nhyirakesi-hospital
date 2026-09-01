@@ -119,16 +119,16 @@ export function Footer() {
         </div>
 
         {/* Bottom Disclaimer & Copyright */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>
             © {new Date().getFullYear()} Nhyirakesi Wellness Hospital. All rights reserved. Takoradi, Ghana.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-6">
             <a
               href={hospitalInfo.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white flex items-center gap-1"
+              className="hover:text-white flex items-center gap-1 transition-colors"
             >
               Instagram <ArrowUpRight className="w-3 h-3" />
             </a>
@@ -136,9 +136,30 @@ export function Footer() {
               href={hospitalInfo.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white flex items-center gap-1"
+              className="hover:text-white flex items-center gap-1 transition-colors"
             >
               Facebook <ArrowUpRight className="w-3 h-3" />
+            </a>
+            <a
+              href="https://wesleyconsults.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 hover:text-white transition-colors group"
+              title="Wesley Consults"
+            >
+              <span>
+                Website created by{" "}
+                <span className="font-medium text-slate-300 group-hover:text-white transition-colors">
+                  Wesley Consults
+                </span>
+              </span>
+              <Image
+                src="/images/wesley-consults-logo.png"
+                alt="Wesley Consults"
+                width={55}
+                height={30}
+                className="h-[28px] w-auto object-contain opacity-85 group-hover:opacity-100 transition-opacity"
+              />
             </a>
           </div>
         </div>
