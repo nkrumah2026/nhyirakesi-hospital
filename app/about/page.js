@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { hospitalInfo, coreValues } from "@/content/hospitalData";
+import { hospitalInfo, coreValues, careTeam } from "@/content/hospitalData";
 import { Gallery } from "@/components/Gallery";
 
 export const metadata = {
@@ -30,7 +30,7 @@ export default function AboutPage() {
       <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-6 space-y-4">
+          <div className="lg:col-span-6 space-y-4 text-left">
             <h2 className="section-title text-slate-900">
               Natural Remedies & Modern Clinical Care
             </h2>
@@ -63,6 +63,44 @@ export default function AboutPage() {
           </div>
         </div>
 
+        {/* Healthcare Practitioners */}
+        <div className="space-y-6 pt-4 border-t border-slate-200 text-left">
+          <div className="max-w-2xl">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
+              Our Healthcare Practitioners
+            </h3>
+            <p className="text-slate-600 text-sm mt-1 font-sans">
+              Experienced physicians and physical therapy specialists serving our Takoradi facility.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {careTeam.map((member, idx) => (
+              <div key={idx} className="bg-slate-50 rounded-xl border border-slate-200 p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <div className="relative w-24 h-24 rounded-lg overflow-hidden shrink-0 border border-slate-300 bg-slate-200">
+                  <Image
+                    src={member.imagePath}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="space-y-1 font-sans text-left">
+                  <span className="text-[11px] font-semibold text-medical-blue">
+                    {member.role}
+                  </span>
+                  <h4 className="font-serif font-bold text-slate-900 text-lg">
+                    {member.name}
+                  </h4>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {member.bio}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Core Principles Grid */}
         <div className="bg-slate-50 rounded-xl p-6 sm:p-10 border border-slate-200 space-y-6 font-sans">
           <div className="text-left max-w-2xl">
@@ -76,7 +114,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {coreValues.map((val, idx) => (
-              <div key={idx} className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-2">
+              <div key={idx} className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-2 text-left">
                 <div className="w-8 h-8 rounded-md bg-blue-50 text-medical-blue border border-blue-200 flex items-center justify-center font-bold text-xs">
                   0{idx + 1}
                 </div>

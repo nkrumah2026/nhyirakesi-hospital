@@ -14,7 +14,7 @@ export function Hero() {
   const featuredServices = [
     "Chiropractic Treatment",
     "Physiotherapy",
-    "Tradittonal Chinesse Medicine",
+    "Traditional Chinese Medicine",
     "Stroke Gym",
     "Detoxification",
     "Acupuncture",

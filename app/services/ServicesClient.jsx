@@ -111,7 +111,7 @@ export function ServicesClient() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
           <div>
             <h2 className="font-serif text-xl sm:text-2xl font-bold text-slate-900">
-              All Official Card Services & Treatments ({cardServicesList.length})
+              Our Full Range of Services ({cardServicesList.length})
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 font-sans mt-0.5">
               Available at Nhyirakesi Wellness Hospital • Adientem Road, Takoradi

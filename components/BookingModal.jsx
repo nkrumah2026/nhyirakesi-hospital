@@ -95,7 +95,7 @@ export function BookingModal({ isOpen, onClose }) {
                   onChange={(e) => setSelectedService(e.target.value)}
                   className="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-medical-blue text-slate-900 text-sm bg-white font-sans"
                 >
-                  <optgroup label="Services from Card">
+                  <optgroup label="All Healthcare Services">
                     {cardServicesList.map((serviceName, idx) => (
                       <option key={idx} value={serviceName}>
                         {serviceName}
