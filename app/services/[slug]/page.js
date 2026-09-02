@@ -40,15 +40,37 @@ export default async function ServiceDetailPage({ params }) {
 
   return (
     <div className="bg-slate-50 py-10 sm:py-16 min-h-screen">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         
-        {/* Back Link */}
-        <Link
-          href={`/services#${service.slug}`}
-          className="inline-flex items-center gap-2 text-xs font-bold text-medical-blue hover:underline"
-        >
-          <ArrowLeft className="w-4 h-4" /> Back to All Services
-        </Link>
+        {/* Navigation & Back Link */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-xs font-bold text-medical-blue hover:underline"
+          >
+            <ArrowLeft className="w-4 h-4" /> Back to All Healthcare Programs
+          </Link>
+
+          {/* Quick Switch Category Pills */}
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
+            {servicesList.map((item) => {
+              const isActive = item.slug === service.slug;
+              return (
+                <Link
+                  key={item.id}
+                  href={`/services/${item.slug}`}
+                  className={`px-3 py-1 rounded-full text-xs font-semibold shrink-0 transition-colors ${
+                    isActive
+                      ? "bg-medical-blue text-white"
+                      : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
+                  }`}
+                >
+                  {item.shortTitle || item.title}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
 
         {/* Detailed Service Content Card */}
         <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 lg:p-10 shadow-2xs space-y-8">

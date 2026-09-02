@@ -33,6 +33,32 @@ export const hospitalInfo = {
   treatmentsCollagePath: "/images/wellness-treatments-collage.jpeg",
 };
 
+export const cardServicesList = [
+  "Chiropractic Treatment",
+  "Negative Ions \\ Anti Cancer Bed",
+  "Detoxification",
+  "Blood Circulation",
+  "Masssage",
+  "Tradittonal Chinesse Medicine",
+  "Natural Foot Massage Walkway",
+  "Relaxation",
+  "Natural Health Drinks",
+  "Chinesse Cupping",
+  "Postural Stability Test",
+  "Accupoint Touch",
+  "Nerve Stimulating",
+  "Muscle Stimulating",
+  "Foot Healing Box",
+  "Wellness Expert",
+  "Slimming Expert",
+  "Physiotherapy",
+  "Stroke Gym",
+  "Sauna",
+  "Acupuncture",
+  "General Treatments"
+];
+
+
 export const servicesList = [
   {
     id: "natural-scientific-health",

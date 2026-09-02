@@ -10,6 +10,16 @@ import { BookingModal } from "./BookingModal";
 export function Hero() {
   const [bookingOpen, setBookingOpen] = useState(false);
 
+  // Key hero featured services from card list
+  const featuredServices = [
+    "Chiropractic Treatment",
+    "Physiotherapy",
+    "Tradittonal Chinesse Medicine",
+    "Stroke Gym",
+    "Detoxification",
+    "Acupuncture",
+  ];
+
   return (
     <section className="bg-slate-50 py-12 md:py-16 lg:py-20 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,20 +42,17 @@ export function Hero() {
               Medical consultations, non-surgical spine and joint care, and supportive natural therapies provided by dedicated healthcare practitioners in Takoradi, Ghana.
             </p>
 
-            {/* Key Service Badges */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1 max-w-xl">
-              <div className="flex items-center gap-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-2xs text-xs font-semibold text-slate-800">
-                <ShieldCheck className="w-4 h-4 text-medical-blue shrink-0" />
-                <span>Natural & Clinical Care</span>
-              </div>
-              <div className="flex items-center gap-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-2xs text-xs font-semibold text-slate-800">
-                <HeartPulse className="w-4 h-4 text-medical-red shrink-0" />
-                <span>Spine & Joint Rehab</span>
-              </div>
-              <div className="flex items-center gap-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-2xs text-xs font-semibold text-slate-800">
-                <Clock className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Open 24/7 Support</span>
-              </div>
+            {/* Key Service Badges from Card */}
+            <div className="flex flex-wrap gap-2 max-w-xl pt-1">
+              {featuredServices.map((service, index) => (
+                <span
+                  key={index}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs text-xs font-semibold text-slate-800"
+                >
+                  <CheckCircle className="w-3.5 h-3.5 text-medical-blue shrink-0" />
+                  <span>{service}</span>
+                </span>
+              ))}
             </div>
 
             {/* Action Buttons */}

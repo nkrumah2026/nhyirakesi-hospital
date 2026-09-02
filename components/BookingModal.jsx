@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { X, Calendar, Phone, MessageCircle, CheckCircle2 } from "lucide-react";
-import { hospitalInfo, servicesList } from "@/content/hospitalData";
+import { hospitalInfo, servicesList, cardServicesList } from "@/content/hospitalData";
 
 export function BookingModal({ isOpen, onClose }) {
   const [patientName, setPatientName] = useState("");
   const [phone, setPhone] = useState("");
-  const [selectedService, setSelectedService] = useState(servicesList[0].title);
+  const [selectedService, setSelectedService] = useState(cardServicesList[0]);
   const [preferredDate, setPreferredDate] = useState("");
   const [preferredTime, setPreferredTime] = useState("Morning (9 AM - 12 PM)");
   const [notes, setNotes] = useState("");
@@ -95,11 +95,20 @@ export function BookingModal({ isOpen, onClose }) {
                   onChange={(e) => setSelectedService(e.target.value)}
                   className="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-medical-blue text-slate-900 text-sm bg-white font-sans"
                 >
-                  {servicesList.map((srv) => (
-                    <option key={srv.id} value={srv.title}>
-                      {srv.title}
-                    </option>
-                  ))}
+                  <optgroup label="Services from Card">
+                    {cardServicesList.map((serviceName, idx) => (
+                      <option key={idx} value={serviceName}>
+                        {serviceName}
+                      </option>
+                    ))}
+                  </optgroup>
+                  <optgroup label="General Care Categories">
+                    {servicesList.map((srv) => (
+                      <option key={srv.id} value={srv.title}>
+                        {srv.title}
+                      </option>
+                    ))}
+                  </optgroup>
                 </select>
               </div>
 
